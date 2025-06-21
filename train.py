@@ -32,3 +32,6 @@ def train_model(x_train, y_train, model, epochs=5, batch_size=64, learning_rate=
 
         # Log the full model
         mlflow.keras.log_model(model, "mnist_model")
+
+        # Save the model
+        model.save("mnist_model.h5")
