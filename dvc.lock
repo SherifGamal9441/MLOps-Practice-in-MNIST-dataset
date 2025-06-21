@@ -1,0 +1,35 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python main.py
+    deps:
+    - path: data.py
+      hash: md5
+      md5: 61b10ace2fb2f130b3695afb617ef110
+      size: 365
+    - path: mnist_data.npz
+      hash: md5
+      md5: 9babdd31316e8d9cb0d00791d8a5bd02
+      size: 54951002
+    - path: model.py
+      hash: md5
+      md5: 492dd84b5f5a57f81ce8a8bf3668acf7
+      size: 708
+    - path: train.py
+      hash: md5
+      md5: 144ffee91d910a734227f6a6777ea7f2
+      size: 1424
+    params:
+      params.yaml:
+        train.batch_size: 64
+        train.epochs: 5
+        train.learning_rate: 0.001
+    outs:
+    - path: history_logs.csv
+      hash: md5
+      md5: 320d6fceaa00db604e86412fd2c12703
+      size: 423
+    - path: mnist_model.h5
+      hash: md5
+      md5: 3471ba959a50e4ebbfa351b55e57092e
+      size: 1502296

@@ -1,8 +1,4 @@
 stages:
-  train-d:
-    cmd: train.py -d model.py -d data.py -d mnist_data.npz -p 
-      train.batch_size,train.epochs,train.learning_rate -o mnist_model.h5 -o 
-      history_logs.csv python main.py
   train:
     cmd: python main.py
     deps:
