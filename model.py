@@ -1,5 +1,6 @@
 from tensorflow.keras import layers, models
-def build_model():
+import tensorflow as tf
+def build_model(learning_rate = 0.001):
     "builds the model and compile it"
     model = models.Sequential([
         layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
@@ -13,7 +14,7 @@ def build_model():
         layers.Dense(10, activation='softmax')
     ])
     
-    model.compile(optimizer='adam',
+    model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate),
                   loss='sparse_categorical_crossentropy',
                   metrics=['accuracy'])
     return model
