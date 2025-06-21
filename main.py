@@ -2,15 +2,17 @@ from data import load_mnist
 from model import build_model
 from train import train_model
 from evaluate import evaluate_model
-import argparse
-
+import yaml
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--batch_size', type=int, default=64)
-    parser.add_argument('--epochs', type=int, default=5)
-    parser.add_argument('--learning_rate', type=float, default=0.001)
-    args = parser.parse_args()
+    
+    with open("params.yaml") as f:
+        params = yaml.safe_load(f)["train"]
+
+    batch_size = params["batch_size"]
+    epochs = params["epochs"]
+    learning_rate = params["learning_rate"]
+
     (x_train, y_train), (x_test, y_test) = load_mnist()
-    model = build_model(learning_rate=args.learning_rate)
-    train_model(x_train, y_train, model, batch_size=args.batch_size, epochs=args.epochs, learning_rate=args.learning_rate)
+    model = build_model(learning_rate=learning_rate)
+    train_model(x_train, y_train, model, batch_size=batch_size, epochs=epochs, learning_rate=learning_rate)
     evaluate_model(x_test, y_test, model)

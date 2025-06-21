@@ -4,3 +4,4 @@ MNIST.ipynb
 mlruns
 history_logs.csv
 /mnist_data.npz
+/mnist_model.h5
