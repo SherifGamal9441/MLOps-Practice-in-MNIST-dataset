@@ -1,11 +1,12 @@
 stages:
   train:
-    cmd: python main.py
+    cmd: python train.py
     deps:
     - data.py
     - mnist_data.npz
     - model.py
     - train.py
+    - train_utils.py
     params:
     - train.batch_size
     - train.epochs
@@ -13,3 +14,12 @@ stages:
     outs:
     - history_logs.csv
     - mnist_model.h5
+  evaluate:
+    cmd: python evaluate.py
+    deps:
+    - data.py
+    - evaluate.py
+    - evaluate_utils.py
+    - mnist_model.h5
+    outs:
+    - metrics.json

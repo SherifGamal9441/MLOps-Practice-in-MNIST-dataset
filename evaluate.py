@@ -1,4 +1,8 @@
-def evaluate_model(x_test,y_test,model):
-    "evaluate the model performance"
-    test_loss, test_acc = model.evaluate(x_test, y_test)
-    print(f"Test accuracy: {test_acc:.4f}")
+from data import load_mnist
+from tensorflow.keras.models import load_model
+from evaluate_utils import evaluate_model
+
+if __name__ == "__main__":
+    _, (x_test, y_test) = load_mnist()
+    model = load_model("mnist_model.h5")
+    evaluate_model(x_test, y_test, model)
