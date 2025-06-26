@@ -3,3 +3,7 @@ mlflow
 dvc
 pytest
 numpy
+python-multipart
+pillow
+uvicorn
+fastapi

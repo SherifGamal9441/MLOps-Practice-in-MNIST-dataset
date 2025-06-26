@@ -6,3 +6,4 @@ history_logs.csv
 /mnist_data.npz
 /mnist_model.h5
 /metrics.json
+.pytest_cache
