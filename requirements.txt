@@ -1,0 +1,4 @@
+tensorflow
+mlflow
+dvc
+pytest

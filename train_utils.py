@@ -28,4 +28,4 @@ def train_model(x_train, y_train, model, epochs=5, batch_size=64, learning_rate=
 
         # Save model
         model.save("mnist_model.h5")
-        mlflow.log_artifact("mnist_model.h5")
+        mlflow.keras.log_model(model, "model", registered_model_name="mnist_cnn")

@@ -21,8 +21,8 @@ stages:
       size: 456
     - path: train_utils.py
       hash: md5
-      md5: c63a40be2fd15096b9fab47139459afa
-      size: 1217
+      md5: a0b73b1a98fe8ccab83bdc783c385b7d
+      size: 1253
     params:
       params.yaml:
         train.batch_size: 64
@@ -31,11 +31,11 @@ stages:
     outs:
     - path: history_logs.csv
       hash: md5
-      md5: 4f5f8d1ae432f642717cd7d0fe055c5f
-      size: 429
+      md5: f272ad12a360a591d24fab1b2bce8aba
+      size: 427
     - path: mnist_model.h5
       hash: md5
-      md5: 3aa446c972c6334e9eefcf63992aedb1
+      md5: e1baa2a8865215975b84f89403036d37
       size: 1502296
   evaluate:
     cmd: python evaluate.py
@@ -54,10 +54,10 @@ stages:
       size: 280
     - path: mnist_model.h5
       hash: md5
-      md5: 3aa446c972c6334e9eefcf63992aedb1
+      md5: e1baa2a8865215975b84f89403036d37
       size: 1502296
     outs:
     - path: metrics.json
       hash: md5
-      md5: 971354ef074b9afed28957caa8956f79
-      size: 60
+      md5: a7df6910a2905f6d3c246cff203efda3
+      size: 59
