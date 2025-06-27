@@ -18,7 +18,7 @@ def read_root():
 # Only run if we're in deployment (optional)
 if "GDRIVE_CLIENT_SECRET" in os.environ:
     subprocess.run([
-        "dvc", "remote", "modify", "myremote",
+        "dvc", "remote", "modify", "gdrive",
         "gdrive_client_secret", os.environ["GDRIVE_CLIENT_SECRET"],
         "--local"
     ], check=True)
