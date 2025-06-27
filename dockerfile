@@ -18,8 +18,6 @@ COPY app.py .
 COPY mnist_model.h5 .
 COPY requirements.txt .
 
-RUN dvc pull
-
 EXPOSE 8000
 
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
