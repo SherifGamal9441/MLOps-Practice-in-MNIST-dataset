@@ -5,6 +5,8 @@ import numpy as np
 from PIL import Image
 from PIL import ImageOps
 import io
+import os
+import subprocess
 
 app = FastAPI()
 
@@ -12,6 +14,15 @@ app = FastAPI()
 @app.get("/")
 def read_root():
     return {"message": "MNIST API is running!"}
+
+# Only run if we're in deployment (optional)
+if "GDRIVE_CLIENT_SECRET" in os.environ:
+    subprocess.run([
+        "dvc", "remote", "modify", "myremote",
+        "gdrive_client_secret", os.environ["GDRIVE_CLIENT_SECRET"],
+        "--local"
+    ], check=True)
+    subprocess.run(["dvc", "pull"], check=True)
 
 # Load the trained model
 model = tf.keras.models.load_model("mnist_model.h5")
