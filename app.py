@@ -5,8 +5,6 @@ import numpy as np
 from PIL import Image
 from PIL import ImageOps
 import io
-import os
-import subprocess
 
 app = FastAPI()
 
@@ -14,18 +12,6 @@ app = FastAPI()
 @app.get("/")
 def read_root():
     return {"message": "MNIST API is running!"}
-
-# Only run if we're inside a Git repo
-if not os.path.exists(".git"):
-    print("⚠️ Not a Git repo, skipping DVC pull")
-else:
-    print("✅ Git repo detected, pulling model")
-    subprocess.run([
-        "dvc", "remote", "modify", "gdrive-remote",
-        "gdrive_client_secret", os.environ["GDRIVE_CLIENT_SECRET"],
-        "--local"
-    ], check=True)
-    subprocess.run(["dvc", "pull"], check=True)
 
 # Load the trained model
 model = tf.keras.models.load_model("mnist_model.h5")
