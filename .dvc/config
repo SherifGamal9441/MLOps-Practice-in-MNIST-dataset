@@ -1,4 +1,5 @@
 [core]
-    remote = localremote
-['remote "localremote"']
-    url = /home/sherif/Datasets/MNIST/
+    remote = gdrive
+['remote "gdrive"']
+    url = gdrive://1f91FquQn7fv0Hr-8UK2FQelphMMdW3L3?usp=sharing
+    gdrive_client_id = 574274713121-g49tvo5cfqokkllpff7rmk38lit1tsgl.apps.googleusercontent.com
