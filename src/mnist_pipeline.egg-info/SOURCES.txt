@@ -1,0 +1,9 @@
+LICENSE
+setup.py
+src/mnist_pipeline.egg-info/PKG-INFO
+src/mnist_pipeline.egg-info/SOURCES.txt
+src/mnist_pipeline.egg-info/dependency_links.txt
+src/mnist_pipeline.egg-info/entry_points.txt
+src/mnist_pipeline.egg-info/requires.txt
+src/mnist_pipeline.egg-info/top_level.txt
+tests/tests.py

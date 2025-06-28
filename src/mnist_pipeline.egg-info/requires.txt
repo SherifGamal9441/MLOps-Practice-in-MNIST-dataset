@@ -1,0 +1,9 @@
+tensorflow
+numpy
+pandas
+mlflow
+dvc
+fastapi
+uvicorn
+python-multipart
+Pillow
