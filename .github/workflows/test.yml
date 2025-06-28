@@ -26,4 +26,4 @@ jobs:
     - name: Run tests
       run: |
         export PYTHONPATH=$PYTHONPATH:./src
-        python -m tests.test
+        pytest tests.test.py
