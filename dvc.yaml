@@ -1,25 +1,23 @@
 stages:
   train:
-    cmd: python train.py
+    cmd: PYTHONPATH=. python scripts/train.py
     deps:
-    - data.py
-    - mnist_data.npz
-    - model.py
-    - train.py
-    - train_utils.py
+    - data/mnist_data.npz
+    - scripts/train.py
+    - src/
     params:
     - train.batch_size
     - train.epochs
     - train.learning_rate
     outs:
-    - history_logs.csv
+    - logs/history_logs.csv
     - mnist_model.h5
   evaluate:
-    cmd: python evaluate.py
+    cmd: PYTHONPATH=. python scripts/evaluate.py
     deps:
-    - data.py
-    - evaluate.py
-    - evaluate_utils.py
     - mnist_model.h5
+    - scripts/evaluate.py
+    - src/data/data.py
+    - src/models/evaluate_utils.py
     outs:
-    - metrics.json
+    - logs/metrics.json

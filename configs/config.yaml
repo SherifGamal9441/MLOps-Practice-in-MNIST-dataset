@@ -1,0 +1,4 @@
+paths:
+  data: data/mnist_data.npz
+  model: mnist_model.h5
+  log: history_logs.csv

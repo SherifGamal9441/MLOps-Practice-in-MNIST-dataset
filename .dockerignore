@@ -1,10 +1,7 @@
-__pycache__
-data.py
-evaluate_utils.py
-evaluate.py
-history_logs
-main.py
-LICENSE
-metrics.json
-mnist_data.npz
-model.py
+__pycache__/
+.pytest_cache/
+logs/
+src/
+data/mnist_data.npz
+tests/
+mlruns/

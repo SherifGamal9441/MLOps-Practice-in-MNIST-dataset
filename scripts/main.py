@@ -1,5 +1,7 @@
+# Note: This is for local testing
+
 from data import load_mnist
-from model import build_model
+from src.models.model import build_model
 from train import train_model
 from evaluate import evaluate_model
 import yaml

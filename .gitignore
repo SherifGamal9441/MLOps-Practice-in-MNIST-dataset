@@ -1,8 +1,8 @@
 __pycache__
 .ipynb_checkpoints
+mlruns/
+logs/
+data/mnist_data.npz
 MNIST.ipynb
-mlruns
-history_logs.csv
-/mnist_data.npz
-/metrics.json
 .pytest_cache
+/mnist_model.h5

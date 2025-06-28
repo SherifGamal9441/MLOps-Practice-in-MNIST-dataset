@@ -1,63 +1,56 @@
 schema: '2.0'
 stages:
   train:
-    cmd: python train.py
+    cmd: PYTHONPATH=. python scripts/train.py
     deps:
-    - path: data.py
-      hash: md5
-      md5: 61b10ace2fb2f130b3695afb617ef110
-      size: 365
-    - path: mnist_data.npz
+    - path: data/mnist_data.npz
       hash: md5
       md5: 9babdd31316e8d9cb0d00791d8a5bd02
       size: 54951002
-    - path: model.py
+    - path: scripts/train.py
       hash: md5
-      md5: 492dd84b5f5a57f81ce8a8bf3668acf7
-      size: 708
-    - path: train.py
+      md5: bc67677f35810893754ed0a7bbc7bdf6
+      size: 487
+    - path: src/
       hash: md5
-      md5: 64eda303d7e5216703df6df60933bc8e
-      size: 456
-    - path: train_utils.py
-      hash: md5
-      md5: a0b73b1a98fe8ccab83bdc783c385b7d
-      size: 1253
+      md5: 834b4c3a8a43900ade04daef40b60c28.dir
+      size: 5802
+      nfiles: 11
     params:
       params.yaml:
         train.batch_size: 64
         train.epochs: 5
         train.learning_rate: 0.001
     outs:
-    - path: history_logs.csv
+    - path: logs/history_logs.csv
       hash: md5
-      md5: f272ad12a360a591d24fab1b2bce8aba
-      size: 427
+      md5: 7febce135a409322c18a0907be500734
+      size: 429
     - path: mnist_model.h5
       hash: md5
-      md5: e1baa2a8865215975b84f89403036d37
+      md5: 7d4536543c27c8aaed8fa94246ec878e
       size: 1502296
   evaluate:
-    cmd: python evaluate.py
+    cmd: PYTHONPATH=. python scripts/evaluate.py
     deps:
-    - path: data.py
-      hash: md5
-      md5: 61b10ace2fb2f130b3695afb617ef110
-      size: 365
-    - path: evaluate.py
-      hash: md5
-      md5: 4c9eeba8c26b4e7da08d64c5e6101bb0
-      size: 267
-    - path: evaluate_utils.py
-      hash: md5
-      md5: 8fa2c87d4f9d848864f07ab535b6837f
-      size: 280
     - path: mnist_model.h5
       hash: md5
-      md5: e1baa2a8865215975b84f89403036d37
+      md5: 7d4536543c27c8aaed8fa94246ec878e
       size: 1502296
-    outs:
-    - path: metrics.json
+    - path: scripts/evaluate.py
       hash: md5
-      md5: a7df6910a2905f6d3c246cff203efda3
-      size: 59
+      md5: c8276a48377f81afa2d5635d900a5635
+      size: 287
+    - path: src/data/data.py
+      hash: md5
+      md5: b3d4084e5db5b45f68b350a953756a2f
+      size: 370
+    - path: src/models/evaluate_utils.py
+      hash: md5
+      md5: 48f93cb59c68920920633279245e4ed5
+      size: 285
+    outs:
+    - path: logs/metrics.json
+      hash: md5
+      md5: 62248a87159879ecfccece0e2f0561e8
+      size: 62

@@ -23,8 +23,8 @@ def train_model(x_train, y_train, model, epochs=5, batch_size=64, learning_rate=
 
         # Save training history
         history_df = pd.DataFrame(history.history)
-        history_df.to_csv("history_logs.csv", index=False)
-        mlflow.log_artifact("history_logs.csv")
+        history_df.to_csv("logs/history_logs.csv", index=False)
+        mlflow.log_artifact("logs/history_logs.csv")
 
         # Save model
         model.save("mnist_model.h5")

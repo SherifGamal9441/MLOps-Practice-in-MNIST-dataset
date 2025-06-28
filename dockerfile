@@ -10,7 +10,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 3. Now copy the rest of your project
-COPY app.py .
+COPY scripts/app.py .
 COPY mnist_model.h5 .
 COPY requirements.txt .
 

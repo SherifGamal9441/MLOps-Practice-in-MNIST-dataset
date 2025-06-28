@@ -1,6 +1,6 @@
-from data import load_mnist
-from model import build_model
-from train_utils import train_model
+from src.data.data import load_mnist
+from src.models.model import build_model
+from src.models.train_utils import train_model
 import yaml
 
 if __name__ == "__main__":
