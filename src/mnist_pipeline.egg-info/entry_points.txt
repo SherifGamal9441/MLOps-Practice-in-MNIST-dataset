@@ -1,4 +1,0 @@
-[console_scripts]
-mnist-eval = scripts.evaluate:main
-mnist-infer = scripts.inference:main
-mnist-train = scripts.train:main
